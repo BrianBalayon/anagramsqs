@@ -1,26 +1,6 @@
 import unittest
 import anagramsq 
 
-class TestAnagrams(unittest.TestCase):
-
-    def test_true(self):
-        str1 = "ABC"
-        str2 = "CAB"
-        result = anagramsq.is_anagram(str1, str2)
-        self.assertTrue(result, "ABC and CAB are anagrams.")
-
-    def test_false(self):
-        str1 = "ABC"
-        str2 = "CAM"
-        result = anagramsq.is_anagram(str1, str2)
-        self.assertFalse(result, "ABC and CAM are not anagrams.")
-
-    def test_short(self):
-        str1 = "ABC"
-        str2 = "CA"
-        result = anagramsq.is_anagram(str1, str2)
-        self.assertFalse(result, "ABC and CA are not anagrams.")
-
 
 class TestPalindromes(unittest.TestCase):
 

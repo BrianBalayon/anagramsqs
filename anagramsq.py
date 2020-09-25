@@ -28,7 +28,6 @@ def sort_to_dicts(arr):
     ret_val = {}
     for elem in arr:
         key = str_to_key(elem)
-        print(key)
         if (key in ret_val):
             ret_val[key].append(elem)
         else:
@@ -36,8 +35,32 @@ def sort_to_dicts(arr):
     return ret_val
 
 
+def drop_singles(d):
+    '''
+    Removes any dictionary entries with 1 member in the array
+    '''
+    ret_val = d.copy()
+    keys = d.keys()
+    for k in keys:
+        arr = ret_val[k]
+        if (len(arr)<2):
+            ret_val.pop(k)
+    return ret_val
+
+
 def main():
-    file = open()
+    file = open("./p098_words.txt", "r")
+    all_words = file.read()
+    file.close
+    all_words = all_words.replace("\"","")
+    all_words = all_words.replace(" ","")
+    arr = all_words.split(",")
+    dicts = sort_to_dicts(arr)
+    pruned = drop_singles(dicts)
+    keys = pruned.keys()
+    for k in keys:
+        
+    print(pruned)
 
 
 if __name__ == "__main__":
