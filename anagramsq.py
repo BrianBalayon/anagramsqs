@@ -1,3 +1,14 @@
+def to_dict(s):
+    ret_val = {}
+    for i in range(len(s)):
+        key = s[i]
+        if (key in ret_val):
+            ret_val[key] += 1
+        else:
+            ret_val[key] = 1
+    return ret_val
+
+
 def is_palindrome(s1, s2):
     ''' Takes in 2 string to check if they are palindromes '''
     str_len = len(s1)
@@ -58,9 +69,7 @@ def main():
     dicts = sort_to_dicts(arr)
     pruned = drop_singles(dicts)
     keys = pruned.keys()
-    for k in keys:
-        
-    print(pruned)
+    # for k in keys:
 
 
 if __name__ == "__main__":

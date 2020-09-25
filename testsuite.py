@@ -62,5 +62,20 @@ class TestMakeDicts(unittest.TestCase):
         self.assertEqual(dict_len, 2, "ABC and CA should be in different dictionary key.")
 
 
+class TestToDicts(unittest.TestCase):
+
+    def test_same(self):
+        s = "AA"
+        d = anagramsq.to_dict(s)
+        dict_len = len(d)
+        self.assertEqual(dict_len, 1, "AA only has 1 unique letter.")
+
+    def test_diff(self):
+        s = "AB"
+        d = anagramsq.to_dict(s)
+        dict_len = len(d)
+        self.assertEqual(dict_len, 2, "AB only has 2 unique letters.")
+
+
 if __name__ == '__main__':
     unittest.main()
