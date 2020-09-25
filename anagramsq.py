@@ -17,12 +17,23 @@ def is_palindrome(s1, s2):
     return True
     
 
-
 def str_to_key(s):
     ''' Create a dictionary key by taking the sum of their char to int values '''
     ret_val = 0
     for i in range(len(s)):
         ret_val += ord(s[i])
+    return ret_val
+
+
+def sort_to_dicts(arr):
+    ret_val = {}
+    for elem in arr:
+        key = str_to_key(elem)
+        print(key)
+        if (key in ret_val):
+            ret_val[key].append(elem)
+        else:
+            ret_val[key] = [elem]
     return ret_val
 
 

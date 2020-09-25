@@ -67,6 +67,19 @@ class TestGenKeys(unittest.TestCase):
         self.assertNotEqual(res1, res2, "ABC and CA should produce different keys.")
 
 
+class TestMakeDicts(unittest.TestCase):
+
+    def test_same(self):
+        arr = ["ABC", "CAB"]
+        dicts = anagramsq.sort_to_dicts(arr)
+        dict_len = len(dicts)
+        self.assertEqual(dict_len, 1, "ABC and CAB should be in the same dictionary key.")
+
+    def test_diff(self):
+        arr = ["ABC", "CA"]
+        dicts = anagramsq.sort_to_dicts(arr)
+        dict_len = len(dicts)
+        self.assertEqual(dict_len, 2, "ABC and CA should be in different dictionary key.")
 
 
 if __name__ == '__main__':
