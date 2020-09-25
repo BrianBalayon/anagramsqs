@@ -59,6 +59,25 @@ def drop_singles(d):
     return ret_val
 
 
+def check_anagrams(arr):
+    ret_val = []
+    count = []
+
+    for word in arr:
+        count.append(to_dict(word))
+
+    while len(count)>0:
+        word = count.pop()
+        i = len(count)
+
+        for j in range(len(count)):
+            word2 = count[j]
+            if (word == word2):
+                if (not is_palindrome(arr[i], arr[j])):
+                    ret_val.append([arr[i], arr[j]])
+    return ret_val
+
+
 def main():
     file = open("./p098_words.txt", "r")
     all_words = file.read()
@@ -69,7 +88,12 @@ def main():
     dicts = sort_to_dicts(arr)
     pruned = drop_singles(dicts)
     keys = pruned.keys()
-    # for k in keys:
+    pairs = []
+    for k in keys:
+        found = check_anagrams(pruned[k])
+        if (len(found)>0):
+            pairs.append(found)
+    print(pairs)
 
 
 if __name__ == "__main__":
