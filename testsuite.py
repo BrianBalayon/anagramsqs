@@ -79,9 +79,7 @@ class TestMakeDicts(unittest.TestCase):
         arr = ["ABC", "CA"]
         dicts = anagramsq.sort_to_dicts(arr)
         dict_len = len(dicts)
-        self.assertEqual(dict_len, 1, "ABC and CAB should be in different dictionary key.")
-
-
+        self.assertEqual(dict_len, 2, "ABC and CA should be in different dictionary key.")
 
 
 if __name__ == '__main__':

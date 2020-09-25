@@ -26,7 +26,15 @@ def str_to_key(s):
 
 
 def sort_to_dicts(arr):
-    return {}
+    ret_val = {}
+    for elem in arr:
+        key = str_to_key(elem)
+        print(key)
+        if (key in ret_val):
+            ret_val[key].append(elem)
+        else:
+            ret_val[key] = [elem]
+    return ret_val
 
 
 def main():
