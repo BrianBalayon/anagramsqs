@@ -1,8 +1,3 @@
-def is_anagram(s1, s2):
-    ''' Takes in 2 string to check if they are anagrams '''
-    return True
-
-
 def is_palindrome(s1, s2):
     ''' Takes in 2 string to check if they are palindromes '''
     str_len = len(s1)
@@ -18,7 +13,11 @@ def is_palindrome(s1, s2):
     
 
 def str_to_key(s):
-    ''' Create a dictionary key by taking the sum of their char to int values '''
+    ''' 
+    Create a dictionary key by taking the sum of their char to int values. 
+    Handles checking if 2 strings are anagrams by producing the same key despite letter order.
+    '''
+    
     ret_val = 0
     for i in range(len(s)):
         ret_val += ord(s[i])
